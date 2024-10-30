@@ -1,8 +1,7 @@
 # Joker CodeGenerator
 This is a simple tool for generating Steamodded api based Joker code. I made it to help myself with my Pokermon mod, but it is general enough to be used by any Steamodded mod.
 
-![{81A3F56B-1C1F-4C30-89BF-B8F0B3111C7A}](https://github.com/user-attachments/assets/22223faf-05cd-4814-8f2e-be62910d5fee)
-
+![{C6F07123-ABF6-4FE4-AD32-143036899E24}](https://github.com/user-attachments/assets/19b2e226-654d-4271-af2e-8de0583b96d4)
 
 Everything should be pretty straightforward, but the Text field has some special replacement logic. 
 
