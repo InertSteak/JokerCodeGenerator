@@ -38,7 +38,7 @@
             this.PokeText.Name = "PokeText";
             this.PokeText.Size = new System.Drawing.Size(258, 286);
             this.PokeText.TabIndex = 1;
-            this.PokeText.Text = "Pokemon Text Goes Here";
+            this.PokeText.Text = "Joker Text Goes Here";
             this.PokeText.TextChanged += new System.EventHandler(this.PokeText_TextChanged);
             // 
             // PokeTextWin

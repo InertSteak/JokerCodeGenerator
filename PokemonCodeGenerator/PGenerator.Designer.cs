@@ -53,7 +53,7 @@
             this.Blueprint = new System.Windows.Forms.CheckBox();
             this.RequireItem = new System.Windows.Forms.CheckBox();
             this.Item = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
+            this.ItemLabel = new System.Windows.Forms.Label();
             this.Calculate = new System.Windows.Forms.Button();
             this.Enhance = new System.Windows.Forms.ComboBox();
             this.labelEnhance = new System.Windows.Forms.Label();
@@ -64,6 +64,7 @@
             this.Eternal = new System.Windows.Forms.CheckBox();
             this.AddDeck = new System.Windows.Forms.CheckBox();
             this.RemoveDeck = new System.Windows.Forms.CheckBox();
+            this.noPoke = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.Xpos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ypos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Cost)).BeginInit();
@@ -87,7 +88,7 @@
             this.PokemonName.Name = "PokemonName";
             this.PokemonName.Size = new System.Drawing.Size(158, 20);
             this.PokemonName.TabIndex = 1;
-            this.PokemonName.Text = "Bulbasaur";
+            this.PokemonName.Text = "Jimbo";
             // 
             // Preview
             // 
@@ -103,9 +104,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(12, 5);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 13);
+            this.label2.Size = new System.Drawing.Size(35, 13);
             this.label2.TabIndex = 4;
-            this.label2.Text = "Pokemon Name";
+            this.label2.Text = "Name";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // previewbutton
@@ -350,15 +351,15 @@
             this.Item.TabIndex = 26;
             this.Item.Text = "Moon Stone";
             // 
-            // label8
+            // ItemLabel
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(9, 344);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(31, 13);
-            this.label8.TabIndex = 25;
-            this.label8.Text = "Item";
+            this.ItemLabel.AutoSize = true;
+            this.ItemLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ItemLabel.Location = new System.Drawing.Point(9, 344);
+            this.ItemLabel.Name = "ItemLabel";
+            this.ItemLabel.Size = new System.Drawing.Size(31, 13);
+            this.ItemLabel.TabIndex = 25;
+            this.ItemLabel.Text = "Item";
             // 
             // Calculate
             // 
@@ -472,11 +473,23 @@
             this.RemoveDeck.Text = "Remove From Deck?";
             this.RemoveDeck.UseVisualStyleBackColor = true;
             // 
+            // noPoke
+            // 
+            this.noPoke.AutoSize = true;
+            this.noPoke.Location = new System.Drawing.Point(211, 426);
+            this.noPoke.Name = "noPoke";
+            this.noPoke.Size = new System.Drawing.Size(143, 17);
+            this.noPoke.TabIndex = 39;
+            this.noPoke.Text = "Disable Pokermon FIelds";
+            this.noPoke.UseVisualStyleBackColor = true;
+            this.noPoke.CheckedChanged += new System.EventHandler(this.noPoke_CheckedChanged);
+            // 
             // PGenerator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1295, 450);
+            this.Controls.Add(this.noPoke);
             this.Controls.Add(this.RemoveDeck);
             this.Controls.Add(this.AddDeck);
             this.Controls.Add(this.Eternal);
@@ -488,7 +501,7 @@
             this.Controls.Add(this.labelEnhance);
             this.Controls.Add(this.Calculate);
             this.Controls.Add(this.Item);
-            this.Controls.Add(this.label8);
+            this.Controls.Add(this.ItemLabel);
             this.Controls.Add(this.RequireItem);
             this.Controls.Add(this.Blueprint);
             this.Controls.Add(this.Perishable);
@@ -542,7 +555,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label ItemLabel;
         public System.Windows.Forms.TextBox Atlas;
         public System.Windows.Forms.ComboBox Rarity;
         public System.Windows.Forms.NumericUpDown Cost;
@@ -562,6 +575,7 @@
         public System.Windows.Forms.CheckBox Eternal;
         public System.Windows.Forms.CheckBox AddDeck;
         public System.Windows.Forms.CheckBox RemoveDeck;
+        public System.Windows.Forms.CheckBox noPoke;
     }
 }
 

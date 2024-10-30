@@ -257,7 +257,7 @@ namespace PokemonCodeGenerator
             cost = "cost = " + Form.Cost.Value.ToString() + ",";
             body.Add(cost);
 
-            if (Form.RequireItem.Checked)
+            if (Form.RequireItem.Checked && !Form.noPoke.Checked)
             {
                 item = Form.Item.SelectedItem.ToString().Replace(" ", "").ToLower(); ;
                 body.Add("item_req = \"" + item + "\",");
@@ -269,9 +269,15 @@ namespace PokemonCodeGenerator
                 body.Add("enhancement_gate = \"" + enhance + "\",");
             }
 
-            body.Add("stage = \"" + Form.Stage.SelectedItem.ToString() + "\",");
+            if (!Form.noPoke.Checked)
+            {
+                body.Add("stage = \"" + Form.Stage.SelectedItem.ToString() + "\",");
+            }
 
-            body.Add("ptype = \"" + Form.Type.SelectedItem.ToString() + "\",");
+            if (!Form.noPoke.Checked)
+            {
+                body.Add("ptype = \"" + Form.Type.SelectedItem.ToString() + "\",");
+            }
 
             body.Add("atlas = \"" + Form.Atlas.Text + "\",");
 

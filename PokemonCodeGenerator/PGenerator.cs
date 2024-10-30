@@ -143,5 +143,23 @@ namespace PokemonCodeGenerator
         {
 
         }
+
+        private void noPoke_CheckedChanged(object sender, EventArgs e)
+        {
+            if (noPoke.Checked == true)
+            {
+                RequireItem.Enabled = false;
+                Item.Enabled = false;
+                Stage.Enabled = false;
+                Type.Enabled = false;
+            }
+            else
+            {
+                RequireItem.Enabled = true;
+                Item.Enabled = true;
+                Stage.Enabled = true;
+                Type.Enabled = true;
+            }
+        }
     }
 }
