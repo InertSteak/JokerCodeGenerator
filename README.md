@@ -1,6 +1,10 @@
 # Joker CodeGenerator
 This is a simple tool for generating Steamodded api based Joker code. I made it to help myself with my Pokermon mod, but it is general enough to be used by any Steamodded mod.
 
+![{C6F07123-ABF6-4FE4-AD32-143036899E24}](https://github.com/user-attachments/assets/19b2e226-654d-4271-af2e-8de0583b96d4)
+
+The write to file option will look in a given directory for files that have exactly "-- JokerName" in them where JokerName is what you put in the name field. If you want to be safe, simply use the copy to clipboard option.
+
 Everything should be pretty straightforward, but the Text field has some special replacement logic. 
 
 Use *Mult in the text window and it will be replaced with a Balatro var reference and color wrapper
