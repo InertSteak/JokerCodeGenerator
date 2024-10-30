@@ -438,8 +438,6 @@
             this.Directory.Name = "Directory";
             this.Directory.Size = new System.Drawing.Size(540, 20);
             this.Directory.TabIndex = 35;
-            this.Directory.Text = "C:\\Users\\charl\\Documents\\Root\\Chad\'s Files\\Computer Files\\Chads Documents\\Fun\\Gam" +
-    "es\\Balatro\\Pokemon Code Generator";
             // 
             // Eternal
             // 
