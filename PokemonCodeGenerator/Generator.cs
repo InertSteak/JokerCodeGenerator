@@ -286,7 +286,7 @@ namespace PokemonCodeGenerator
             perish += ",";
             body.Add(perish);
 
-            blueprint = "blue_compat = ";
+            blueprint = "blueprint_compat = ";
             blueprint += Form.Blueprint.Checked ? "true" : "false";
             blueprint += ",";
             body.Add(blueprint);
