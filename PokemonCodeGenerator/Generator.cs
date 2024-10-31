@@ -163,13 +163,19 @@ namespace PokemonCodeGenerator
             List<string> text = new List<string>(convText);
             CodeLines codeText = new CodeLines(text.ToArray(), 3);
 
+            var innerEnd = new List<string>
+            {
+               "}"
+            };
+            CodeLines codeInnerEnd = new CodeLines(innerEnd.ToArray(), 2);
+
             var last = new List<string>
             {
                 "},"
             };
             CodeLines codeLast = new CodeLines(last.ToArray(), 1);
 
-            var varCode = new List<CodeLines> { codeInit, codeInner, codeText, codeLast };
+            var varCode = new List<CodeLines> { codeInit, codeInner, codeText, codeInnerEnd, codeLast };
             return varCode;
         }
         public List<CodeLines> createLocVarArray()
@@ -371,17 +377,17 @@ namespace PokemonCodeGenerator
                 if (Cal.scoringBox.CheckedItems.Contains("Before"))
                 {
                     innerScoring.Add("if context.before " + (Form.Blueprint.Checked ? "" : noblue) + "then");
-                    innerScoring.Add("end,");
+                    innerScoring.Add("end");
                 }
                 if (Cal.scoringBox.CheckedItems.Contains("Joker Main"))
                 {
                     innerScoring.Add("if context.joker_main " + (Form.Blueprint.Checked ? "" : noblue) + "then");
-                    innerScoring.Add("end,");
+                    innerScoring.Add("end");
                 }
                 if (Cal.scoringBox.CheckedItems.Contains("After"))
                 {
                     innerScoring.Add("if context.after " + (Form.Blueprint.Checked ? "" : noblue) + "then");
-                    innerScoring.Add("end,");
+                    innerScoring.Add("end");
                 }
 
                 if (innerScoring.Count > 0)
