@@ -58,7 +58,7 @@ namespace PokemonCodeGenerator
 
         public CodeLines[] createCodeArray()
         {
-            string[] open = { "local " + Form.PokemonName.Text.ToLower() + "={"};
+            string[] open = { "local " + Form.PokemonName.Text.ToLower().Replace(" ", "_") + "={" };
             string[] close = { "}" };
             CodeLines codeOpen = new CodeLines(open, 0);
             CodeLines codeClose = new CodeLines(close, 0);
@@ -88,7 +88,7 @@ namespace PokemonCodeGenerator
         {
             var initial = new List<string>
             {
-                "name = \"" + Form.PokemonName.Text.ToLower() + "\",",
+                "name = \"" + Form.PokemonName.Text.ToLower().Replace(" ", "_") + "\",",
                 "pos = {x = " + Form.Xpos.Value + ", y = " + Form.Ypos.Value + "},"
             };
             string config = "config = {extra = {";
@@ -282,7 +282,10 @@ namespace PokemonCodeGenerator
 
             if (!Form.noPoke.Checked)
             {
-                body.Add("ptype = \"" + Form.Type.SelectedItem.ToString() + "\",");
+                if (Form.Type.SelectedItem.ToString() != "<None>")
+                {
+                    body.Add("ptype = \"" + Form.Type.SelectedItem.ToString() + "\",");
+                }
             }
 
             body.Add("atlas = \"" + Form.Atlas.Text + "\",");
@@ -330,7 +333,7 @@ namespace PokemonCodeGenerator
 
             var end = new List<string>
             {
-                "end,"
+                "end"
             };
             CodeLines codeEnd1 = new CodeLines(end.ToArray(), 1);
             CodeLines codeEnd2 = new CodeLines(end.ToArray(), 2);
@@ -526,7 +529,7 @@ namespace PokemonCodeGenerator
             if (Jvars.includeOdds.Checked)
             {
                 if (OddsNum == 0) { OddsNum = count; }
-                toReplace = toReplace.Replace("*Odds", "{C: green}#" + (count + 1).ToString() + "# in #" + count.ToString() + "#{}");
+                toReplace = toReplace.Replace("*Odds", "{C:green}#" + count.ToString() + "# in #" + (count + 1).ToString() + "#{}");
                 count += 2;
             }
             if (Jvars.includeRetriggers.Checked)

@@ -65,6 +65,7 @@
             this.AddDeck = new System.Windows.Forms.CheckBox();
             this.RemoveDeck = new System.Windows.Forms.CheckBox();
             this.noPoke = new System.Windows.Forms.CheckBox();
+            this.written_label = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Xpos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ypos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Cost)).BeginInit();
@@ -257,7 +258,8 @@
             "Basic",
             "One",
             "Two",
-            "Legendary"});
+            "Legendary",
+            "Other"});
             this.Stage.Location = new System.Drawing.Point(49, 189);
             this.Stage.Name = "Stage";
             this.Stage.Size = new System.Drawing.Size(121, 21);
@@ -279,7 +281,8 @@
             "Metal",
             "Fairy",
             "Dragon",
-            "Earth"});
+            "Earth",
+            "<None>"});
             this.Type.Location = new System.Drawing.Point(49, 216);
             this.Type.Name = "Type";
             this.Type.Size = new System.Drawing.Size(121, 21);
@@ -438,6 +441,7 @@
             this.Directory.Name = "Directory";
             this.Directory.Size = new System.Drawing.Size(540, 20);
             this.Directory.TabIndex = 35;
+            this.Directory.Text = "C:\\Users\\charl\\Documents\\GitHub\\Pokermon\\pokemon";
             // 
             // Eternal
             // 
@@ -482,11 +486,23 @@
             this.noPoke.UseVisualStyleBackColor = true;
             this.noPoke.CheckedChanged += new System.EventHandler(this.noPoke_CheckedChanged);
             // 
+            // written_label
+            // 
+            this.written_label.AutoSize = true;
+            this.written_label.ForeColor = System.Drawing.Color.Red;
+            this.written_label.Location = new System.Drawing.Point(579, 9);
+            this.written_label.Name = "written_label";
+            this.written_label.Size = new System.Drawing.Size(61, 13);
+            this.written_label.TabIndex = 40;
+            this.written_label.Text = "Not Written";
+            this.written_label.Click += new System.EventHandler(this.label8_Click);
+            // 
             // PGenerator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1295, 450);
+            this.Controls.Add(this.written_label);
             this.Controls.Add(this.noPoke);
             this.Controls.Add(this.RemoveDeck);
             this.Controls.Add(this.AddDeck);
@@ -574,6 +590,7 @@
         public System.Windows.Forms.CheckBox AddDeck;
         public System.Windows.Forms.CheckBox RemoveDeck;
         public System.Windows.Forms.CheckBox noPoke;
+        private System.Windows.Forms.Label written_label;
     }
 }
 

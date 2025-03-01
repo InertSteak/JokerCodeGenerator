@@ -34,7 +34,6 @@ namespace PokemonCodeGenerator
             Boolean modify = false;
             StreamReader sr;
             Generator generator = new Generator(this, jvar, ptext, cal);
-            //directory = @"C:\Users\charl\Documents\Root\Chad's Files\Computer Files\Chads Documents\Fun\Games\Balatro\Pokemon Code Generator";
             directory = $@"{Directory.Text}";
             string[] files = System.IO.Directory.GetFiles(directory);
             Console.WriteLine(files.Length);
@@ -78,6 +77,8 @@ namespace PokemonCodeGenerator
                     Console.WriteLine("Exception: " + caughexpection.Message);
                 }
             }
+            written_label.Text = "Written";
+            written_label.ForeColor = Color.Green;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -94,6 +95,8 @@ namespace PokemonCodeGenerator
         {
             Generator generator = new Generator(this, jvar, ptext, cal);
             Preview.Text = generator.createCode();
+            written_label.Text = "Not Written";
+            written_label.ForeColor = Color.Red;
         }
 
         private void label1_Click_1(object sender, EventArgs e)
@@ -160,6 +163,11 @@ namespace PokemonCodeGenerator
                 Stage.Enabled = true;
                 Type.Enabled = true;
             }
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
